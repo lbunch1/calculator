@@ -61,6 +61,7 @@ const appendNumber = function(number) {
 
 const appendOperand = function(op) {
     if (operandPresent) {
+        repeatEval = false;
         evaluate();
         if (!num2 && evaluated) return;
         rawInput += op;
