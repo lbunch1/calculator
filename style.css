@@ -13,10 +13,9 @@ body {
     display:flex;
     align-items: center;
     justify-content: center;
-    min-width: 300px;
     max-width: 100%;
     height: 100%;
-    background-color: lightgrey;
+    background-color: rgb(151, 150, 150);
 }
 
 .calculator {
@@ -27,7 +26,8 @@ body {
     width: 100%;
     max-height:600px;
     max-width:400px;
-    background-color: darkgrey;
+    background-color: rgb(211, 209, 209);
+    box-shadow: 1px 1px 15px black;
 }
 
 .user_input, .calc_output {
@@ -73,4 +73,29 @@ body {
 button {
     flex-grow:1;
     width:100%;
+    border:none;
+    text-decoration:none;
+    font-size:2rem;
+    background-color: darkslategrey;
+    color:white;
+}
+
+.op_pad button {
+    background-color:rgb(38, 38, 68);
+}
+
+.op_pad {
+    z-index: 3;
+    box-shadow: 0px 0 15px black;
+    clip-path:inset(0px 0px 0px -15px);
+}
+
+button:hover {
+    background-color: slategrey;
+}
+
+button:active {
+    outline: none;
+    text-decoration: none;
+    border: none;
 }
