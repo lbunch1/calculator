@@ -54,7 +54,7 @@ const appendNumber = function(number) {
     }
     if (number == "." && isFloat) return;
     if (number == ".") isFloat = true;
-    if (evaluated && !operandPresent) return;
+    //if (evaluated && !operandPresent) return;
     rawInput += number;
     displayInput.innerText = rawInput;
 }
@@ -62,9 +62,10 @@ const appendNumber = function(number) {
 const appendOperand = function(op) {
     if (operandPresent) {
         evaluate();
-        if (!num2 || evaluated) return;
+        if (!num2 && evaluated) return;
         rawInput += op;
         displayInput.innerText = rawInput;
+        operandPresent = true;
         return;
     }
     operandPresent = true;
