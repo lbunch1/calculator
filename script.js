@@ -19,7 +19,9 @@ const acButton = document.getElementById("ac");
 evalButton.addEventListener('click', () => {
     evaluate();
     operandPresent = false;
+    repeatEval = true;
     })
+
 acButton.addEventListener('click', () => clearCalc())
 
 numberButton.forEach((button) => 
@@ -43,6 +45,7 @@ function handleKeyInput(e) {
         operandPresent = false;
         repeatEval = true;
     }
+    e.target.blur();
 }
 
 const appendNumber = function(number) {
@@ -77,7 +80,7 @@ const evaluate = function() {
         num2 = parseFloat(inputArray[1]);
         operator = rawInput.replace(/[0-9]|[.]/g,'');
     }
-    if (num2 === '') return;
+    if (num2 === '' || !operator) return;
     if (num2 =="0" && operator =="/") {
         alert('WARNING!!! User is attempting to destroy the universe.')
         clearCalc();
