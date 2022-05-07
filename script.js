@@ -62,6 +62,7 @@ const appendNumber = function(number) {
 const appendOperand = function(op) {
     if (operandPresent) {
         evaluate();
+        if (!num2 || evaluated) return;
         rawInput += op;
         displayInput.innerText = rawInput;
         return;
@@ -81,6 +82,7 @@ const evaluate = function() {
         operator = rawInput.replace(/[0-9]|[.]/g,'');
     }
     if (num2 === '' || !operator) return;
+    if (!num2) return;
     if (num2 =="0" && operator =="/") {
         alert('WARNING!!! User is attempting to destroy the universe.')
         clearCalc();
@@ -105,6 +107,7 @@ const evaluate = function() {
     num1 = output;
     evaluated = true;
     repeatEval = true;
+    operandPresent = false;
 }
 
 const clearCalc = function() {
