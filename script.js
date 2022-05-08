@@ -104,7 +104,7 @@ const evaluate = function() {
             output = num1 * num2;
             break;
     }
-    displayOutput.innerText = output;
+    displayOutput.innerText = Math.round(output*10000000000000)/10000000000000;
     rawInput = output;
     num1 = output;
     evaluated = true;
@@ -128,6 +128,7 @@ const clearCalc = function() {
 }
 
 const deleteNumber = function() {
+    if(!rawInput[rawInput.length-1].match(/[0-9]/) && rawInput[rawInput.length-1] != '.') operandPresent = false;
     rawInput = rawInput.slice(0,-1);
     displayInput.innerText = rawInput;
 }
