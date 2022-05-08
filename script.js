@@ -84,12 +84,12 @@ const evaluate = function() {
         operator = rawInput.replace(/[0-9]|[.]/g,'');
     }
     if (num2 === '' || !operator) return;
-    if (!num2) return;
     if (num2 =="0" && operator =="/") {
         alert('WARNING!!! User is attempting to destroy the universe.')
         clearCalc();
         return;
     }
+    if (!num2) return;
     switch (operator) {
         case "+":
             output = num1 + num2;
